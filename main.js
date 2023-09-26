@@ -16,7 +16,6 @@ const ai = () => {
   const choices = ["rock", "paper", "scissor"];
   const randomChoice = choices[Math.floor(Math.random() * choices.length)];
 
-  // Set the computer's choice emoji based on the random choice
   let computerEmoji = "";
   switch (randomChoice) {
     case "rock":
@@ -30,7 +29,6 @@ const ai = () => {
       break;
   }
 
-  // Display the computer's choice emoji
   document.getElementById("computer").innerHTML = computerEmoji;
 
   return randomChoice;
