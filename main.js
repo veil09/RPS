@@ -15,6 +15,24 @@ let ties = 0;
 const ai = () => {
   const choices = ["rock", "paper", "scissor"];
   const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+
+  // Set the computer's choice emoji based on the random choice
+  let computerEmoji = "";
+  switch (randomChoice) {
+    case "rock":
+      computerEmoji = "🤛";
+      break;
+    case "paper":
+      computerEmoji = "✋";
+      break;
+    case "scissor":
+      computerEmoji = "✌️";
+      break;
+  }
+
+  // Display the computer's choice emoji
+  document.getElementById("computer").innerHTML = computerEmoji;
+
   return randomChoice;
 };
 
@@ -87,35 +105,26 @@ const restartGame = () => {
 rock.addEventListener("click", () => {
   if (isGameOver()) return;
   you.innerHTML = "🤛";
-  you.style.cssText = "transform: rotate(-90deg)";
+  you.style.cssText = "transform: rotate(0deg)";
 
   const computerChoice = ai();
-  computer.innerHTML = "🤜";
-  computer.style.cssText = "transform: scale(1) rotate(0deg)";
-
   win("rock", computerChoice);
 });
 
 paper.addEventListener("click", () => {
   if (isGameOver()) return;
   you.innerHTML = "✋";
-  you.style.cssText = "transform: rotate(-90deg)";
+  you.style.cssText = "transform: rotate(0deg)";
 
   const computerChoice = ai();
-  computer.innerHTML = "✋";
-  computer.style.cssText = "transform: scale(1) rotate(0deg)";
-
   win("paper", computerChoice);
 });
 
 scissor.addEventListener("click", () => {
   if (isGameOver()) return;
   you.innerHTML = "✌️";
-  you.style.cssText = "transform: rotate(-90deg)";
+  you.style.cssText = "transform: rotate(0deg)";
 
   const computerChoice = ai();
-  computer.innerHTML = "✌️";
-  computer.style.cssText = "transform: scale(1) rotate(0deg)";
-
   win("scissor", computerChoice);
 });
